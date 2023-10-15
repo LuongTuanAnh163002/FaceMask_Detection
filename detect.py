@@ -40,8 +40,6 @@ def detect(opt):
         video = cv2.VideoCapture(0)
         while True:
             ret, img = video.read()
-            print("Read image")
-            print(img)
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             prediction, location = detect_and_predict_mask(img, gray, model)
             if location != (0, 0, 0, 0):
