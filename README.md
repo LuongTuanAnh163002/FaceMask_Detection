@@ -1,24 +1,29 @@
-<h2>How to run repository with custom dataset</h2>
+<h2>How to run repository</h2>
   <h3>1.For training</h3>
-  <p>+Step0: Dowload data you need to classification, the struct of folder contain data to classification like data preparation part</p>
-  <p>+Step1: Open CMD, terminal, anaconda prompt</p>
-  <p>+Step2: Clone this repository<p>
-  <pre>git clone https://github.com/LuongTuanAnh163002/Resnet_AnhLT.git</pre>
-  <p>+Step3: Move to the Resnet_AnhLT folder</p>
-  <pre>cd Resnet_AnhLT</pre>
-  <p>+Step4: Go to "data" folder then create another file .yaml like dog_cat.yaml</p>
-  <p>+Step5: Install all packges need</p>
+  <p>+Step0: Install Anaconda or Miniconda</p>
+  <p>+Step1: Open anaconda prompt</p>
+  <p>+Step2: Create conda environment<p>
+  <pre>conda create --name facemask python=3</pre>
+  <p>+Step3:Clone this repository</p>
+  <pre>git clone https://github.com/LuongTuanAnh163002/FaceMask_Detection.git</pre>
+  <p>+Step4:Move to FaceMask_Detection folder</p>
+  <pre>cd FaceMask_Detection.git</pre>
+  <p>+Step5:Activate conda environment</p>
+  <pre>conda activate facemask</pre>
+  <p>+Step6: Install all packges need</p>
   <pre>pip install -r requirements.txt</pre>
-  <p>+Step6: Run the code below to training for pretrain</p>
-  <pre>python train.py --model_type [resnet18, resnet34, resnet50, resnet101, resnet152] --pretrained --freeze --data file_name.yaml --epochs 50 --device [0, 1, 2,..]</pre>
-  <p>+Step7: Run the code below to training for weight initialize</p>
-  <pre>python train.py --model_type [resnet18, resnet34, resnet50, resnet101, resnet152] --data file_name.yaml --epochs 50 --device [0, 1, 2,..]</pre>
-  <p>+Step8: Run the code below to training for using weight from previous train</p>
-  <pre>python train.py --model_type [resnet18, resnet34, resnet50, resnet101, resnet152] --weight_init [file_name.pt, file_name.pth] --data file_name.yaml --epochs 50 --device [0, 1, 2,..]</pre>
+  <p>+Step7: Run the code below to training</p>
+  <pre>python train.py --epochs 50 --freeze</pre>
   <p>After you run and done training, all results save in runs/train/exp/..., folder runs automatic create after training done:</p>
 
   <h3>2.For detect</h3>
-  <p>+Detect for file</p>
-  <pre>python detect.py --source file_name.jpg --weights ../runs/train/../weights/__.pth --device [0, 1, 2,..]</pre>
-  <p>+Detect for folder</p>
-  <pre>python detect.py --source path_folder --weights ../runs/train/../weights/__.pth --device [0, 1, 2,..]</pre>
+  <h4>2.1.Detect for video</h4>
+  <p>+Detect with my model</p>
+  <pre>python detect.py --demo 1 --source ~./file_name.mp4</pre>
+  <p>+Detect with your model</p>
+  <pre>python detect.py --demo 1 --weights file_model.h5 --source ~./file_name.mp4</pre>
+  <h4>2.2.Detect for webcam</h4>
+  <p>+Detect with my model</p>
+  <pre>python detect.py --demo 0</pre>
+  <p>+Detect with your model</p>
+  <pre>python detect.py --weights file_model.h5 --demo 0</pre>
