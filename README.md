@@ -37,7 +37,7 @@
   <p>+Step3:Clone this repository</p>
   <pre>git clone https://github.com/LuongTuanAnh163002/FaceMask_Detection.git</pre>
   <p>+Step4:Move to FaceMask_Detection folder</p>
-  <pre>cd FaceMask_Detection.git</pre>
+  <pre>cd FaceMask_Detection</pre>
   <p>+Step5:Activate conda environment</p>
   <pre>conda activate facemask</pre>
   <p>+Step6: Install all packges need</p>
