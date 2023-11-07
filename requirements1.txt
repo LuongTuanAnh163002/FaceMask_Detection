@@ -1,0 +1,7 @@
+imutils
+matplotlib
+numpy
+opencv_python
+scikit_learn
+tensorflow
+tqdm
