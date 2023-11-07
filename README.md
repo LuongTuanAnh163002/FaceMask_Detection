@@ -48,7 +48,9 @@
   <pre>conda activate facemask</pre>
   <p>+Step6: Install all packges need</p>
   <pre>pip install -r requirements.txt</pre>
-  <p>+Step7: Run the code below to training</p>
+  <p>+Step7: If you meet something error in step6, try this command line in step7, else skip step7</p>
+  <pre>pip install -r requirements1.txt</pre>
+  <p>+Step8: Run the code below to training</p>
   <pre>python train.py --epochs 50 --freeze</pre>
   <p>After you run and done training, all results save in runs/train/exp/..., folder runs automatic create after training done:</p>
 
